@@ -1,0 +1,11 @@
+/* SPL accent: a calm, deep teal. Dark theme first, light theme below. */
+:root {
+	--sl-color-accent-low: #0b2f2c;
+	--sl-color-accent: #1f9e8f;
+	--sl-color-accent-high: #b8efe6;
+}
+:root[data-theme='light'] {
+	--sl-color-accent-low: #c9f1ea;
+	--sl-color-accent: #137a6e;
+	--sl-color-accent-high: #0b3a35;
+}

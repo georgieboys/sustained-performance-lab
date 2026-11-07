@@ -12,29 +12,44 @@ Everything here is open: the protocols, the reasoning and the evidence. Read it,
 
 | Layer | What it is |
 |---|---|
-| **[CANON](docs/CANON.md)** | The stable core. Practices that make biological sense, have solid evidence and hold up in repeated real-world testing. |
-| **[DOJO](docs/DOJO.md)** | The experimental floor. Promising tools under active testing, labelled *proven*, *plausible* or *mostly vibes*. |
+| **[CANON](docs/canon/index.md)** | The stable core. Practices that make biological sense, have solid evidence and hold up in repeated real-world testing. |
+| **[DOJO](docs/dojo/index.md)** | The experimental floor. Promising tools under active testing, labelled *proven*, *plausible* or *mostly vibes*. |
 | **On the Bench** | Ideas we're watching but not yet running. |
 
-Start with the **[overview](docs/Sustained-Performance-Lab.md)**, then the **[Gateway Protocol](docs/CANON/The-Gateway-Protocol.md)**, the nine-step foundation everything else builds on:
+Start with the **[overview](docs/index.md)**, then the **[Gateway Protocol](docs/canon/gateway-protocol/index.md)**, the nine-step foundation everything else builds on:
 
-1. [Cognitive Reset](docs/CANON/The-Gateway-Protocol/GP1---Cognitive-Reset-Protocols.md)
-2. [Dynamic Flow](docs/CANON/The-Gateway-Protocol/GP2---Dynamic-Flow-Protocol.md)
-3. [Isometric Strength](docs/CANON/The-Gateway-Protocol/GP3---Isometric-Strength-Protocol.md)
-4. [Lower Back](docs/CANON/The-Gateway-Protocol/GP4---Lower-Back-Protocol.md)
-5. [Knee](docs/CANON/The-Gateway-Protocol/GP5---The-Knee-Protocol.md)
-6. [Dynamic Loading (Kettlebells)](docs/CANON/The-Gateway-Protocol/GP6---Dynamic-Loading-(Kettlebells).md)
-7. [VO₂max Conditioning](docs/CANON/The-Gateway-Protocol/GP7---VO₂MAX-CONDITIONING.md)
-8. [Recovery Ritual](docs/CANON/The-Gateway-Protocol/GP8---Recovery-Ritual.md)
-9. [Thermal Reset](docs/CANON/The-Gateway-Protocol/GP9---Thermal-Reset.md)
+1. [Cognitive Reset](docs/canon/gateway-protocol/gp1-cognitive-reset/index.md)
+2. [Dynamic Flow](docs/canon/gateway-protocol/gp2-dynamic-flow.md)
+3. [Isometric Strength](docs/canon/gateway-protocol/gp3-isometric-strength.md)
+4. [Lower Back](docs/canon/gateway-protocol/gp4-lower-back.md)
+5. [Knee](docs/canon/gateway-protocol/gp5-knee.md)
+6. [Dynamic Loading (Kettlebells)](docs/canon/gateway-protocol/gp6-dynamic-loading.md)
+7. [VO₂max Conditioning](docs/canon/gateway-protocol/gp7-vo2max-conditioning.md)
+8. [Recovery Ritual](docs/canon/gateway-protocol/gp8-recovery-ritual.md)
+9. [Thermal Reset](docs/canon/gateway-protocol/gp9-thermal-reset.md)
 
-Also in the Canon: **[SPL Hard Truths](docs/CANON/SPL-Hard-Truths.md)** and **[Physical Metrics That Matter](docs/CANON/Physical-Metrics-That-Matter.md)**. Drafts in progress: [Sleep Protocol](docs/CANON/(Draft)---Sleep-Protocol.md) and [80/20 Nutrition Protocol](docs/CANON/(DRAFT-)-8020-Nutrition-Protocol.md).
+Also in the Canon: **[SPL Hard Truths](docs/canon/hard-truths/index.md)** and **[Physical Metrics That Matter](docs/canon/physical-metrics/index.md)**. Drafts in progress: [Sleep Protocol](docs/canon/sleep-protocol.md) and [80/20 Nutrition Protocol](docs/canon/nutrition-protocol/index.md).
 
 ## This repo is the source of truth
 
-The SPL knowledge base lives here and changes like a codebase: every edit is a commit, every change is reviewable, and the full history is public. Other tools, including SPL's own apps, build on top of this repo.
+The SPL knowledge base lives in [`docs/`](docs/) and changes like a codebase: every edit is a commit, every change is reviewable, and the full history is public. Other tools, including SPL's own apps, build on top of this repo.
 
-The docs were first written in [Slite](https://sustainedperformancelab.slite.com/) and imported with [`scripts/export_slite.py`](scripts/export_slite.py). Some links inside the docs still point to Slite pages and will be converted to repo links.
+## The website
+
+Every push to `main` rebuilds and publishes the public site automatically. Every pull request gets its own preview link, so you can see a change before it's merged.
+
+The site is built with [Astro Starlight](https://starlight.astro.build/). To run it locally:
+
+```bash
+npm install
+npm run dev
+```
+
+**Writing docs:** each page is a markdown file in `docs/`. Folders become sidebar sections, and a folder's `index.md` is its overview page. Link between docs with relative `.md` paths (for example `[Knee Protocol](gp5-knee.md)`) so links work both on GitHub and on the site. Control sidebar order with `sidebar.order` in a page's frontmatter.
+
+`src/content/docs` is a symlink to `docs/` because Starlight expects content there. Edit the files in `docs/`.
+
+The docs were first written in [Slite](https://sustainedperformancelab.slite.com/) and imported once with `scripts/export_slite.py`. That script uses the old Slite layout and is kept only for reference.
 
 ## Contributing
 

@@ -1,4 +1,8 @@
-"""Export the Sustained Performance Lab Slite channel to docs/ as markdown.
+"""LEGACY: one-time import of the SPL Slite channel. Do not rerun over docs/.
+
+The repo is now the source of truth and docs/ uses a different layout. This
+script writes the old Slite folder structure and would duplicate content.
+
 
 Needs SLITE_KEY=<api key> in a .env file at the repo root (never commit it).
 Usage: python3 scripts/export_slite.py
