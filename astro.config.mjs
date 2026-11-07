@@ -7,6 +7,7 @@ import rehypeMdLinks from './src/plugins/rehype-md-links.mjs';
 const repo = 'https://github.com/georgieboys/sustained-performance-lab';
 
 export default defineConfig({
+	site: 'https://sustained-performance-lab.vercel.app',
 	markdown: {
 		// Lets docs link to each other with relative .md paths that work on GitHub and on the site.
 		processor: unified({
